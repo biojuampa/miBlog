@@ -6,4 +6,4 @@ db.sqlite3
 /static
 .DS_Store
 requirements.txt
-blog/template/blog/post_list_primero.html
+post_list_primero.html
