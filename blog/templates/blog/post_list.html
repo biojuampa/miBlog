@@ -1,25 +1,16 @@
-<html>
-	<head>
-   	<title>El blog de melena ;)</title>
-   </head>
-   <body>
-   	<div>
-			<center>
-				<h1><a href="/">El blog de melena ;)</a></h1>
-				<br>
-				<br>
-      	</center>
-     	</div>
+{% extends 'blog/base.html' %}
 
-		{% for post in posts %}
-			<div>
-				<h2><a href="" >{{ post.title }}</a></h2>
-				<p>{{ post.text | linebreaksbr }}</p>			
+
+{% block content %}
+	
+	{% for post in posts %}
+		<div class="post">
+			<h2><a href="{% url 'post_detail' pk=post.pk %}" >{{ post.title }}</a></h2>
+			<p>{{ post.text | linebreaksbr }}</p>			
+			<div class="date">							
 				<p> Publicado: {{ post.published_date }}</p>
-				<br>
-				<br>
-			</div>						
-		{% endfor %}	
+			</div>
+		</div>						
+	{% endfor %}
 
-	</body>
-</html>
+{% endblock %}
